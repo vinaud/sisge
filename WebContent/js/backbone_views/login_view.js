@@ -21,8 +21,11 @@ window.LoginView = Backbone.View.extend({
 	
 	render:function(){
 		
+		
 		var pagina = _.template(this.template);
 		$(this.el).html(pagina);
+		var cadastroUsuarioView = new window.CadastroUsuarioView({el:$(this.el).find('#conteudo_modal')});
+		$(this.el).find('#conteudo_modal').html($(cadastroUsuarioView.render.el).html());
 		
 		
 	},
@@ -30,6 +33,7 @@ window.LoginView = Backbone.View.extend({
 	
 	events:{
 		"click .btn-primary ":"efetuarLogin",
+		"click #se_cadastrar":"mostrarModal"
 			
 		
 		
@@ -49,11 +53,26 @@ window.LoginView = Backbone.View.extend({
 	
 	efetuarLogin:function(){
 		
-		var nomeUsuario = $('#nomeUsuario').val();
-		var senha = $('#senha').val();
+		var nomeUsuario = $(this.el).find('#nomeUsuario').val();
+		var senha = $(this.el).find('#senha').val();
+		var query="http://localhost:8080/SISGE/services/usuario/login/usuario/"+
+							nomeUsuario+"/senha/"+senha
+		$.get(query,function(data){
+			
+			alert(data);
+		});
+
 		
 		
 		
+		
+		
+	},
+	
+	mostrarModal:function(){
+		
+		
+		$('#modalcadastro').modal('show');
 	}
 	
 	

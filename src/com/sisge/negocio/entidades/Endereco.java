@@ -1,7 +1,16 @@
 package com.sisge.negocio.entidades;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="enderecos")
 public class Endereco {
 
+	@Id
+	@GeneratedValue
 	private long id;
 	
 	private String rua;

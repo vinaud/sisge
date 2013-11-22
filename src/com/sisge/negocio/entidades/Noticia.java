@@ -2,14 +2,25 @@ package com.sisge.negocio.entidades;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="noticias")
 public class Noticia {
 	
+	@Id
+	@GeneratedValue
 	private long id;
 	
 	private Date data;
 	
 	private String conteudo;
 	
+	@ManyToOne(targetEntity=Turma.class)
 	private Turma turma;
 
 	public long getId() {

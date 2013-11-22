@@ -2,27 +2,47 @@ package com.sisge.negocio.entidades;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="turmas")
 public class Turma {
 	
+	@Id
+	@GeneratedValue
 	private long id;
 	
+	@Column(unique=true,nullable=false)
 	private String codigo;
 	
 	private int capacidade;
 	
+	@Column(nullable=false)
 	private SituacaoTurma situacao;
 	
+	@OneToMany(mappedBy="turma")
 	private List<Noticia> noticias;
 	
+	@OneToMany(mappedBy="turma")
 	private List<Duvida> duvidas;
 	
+	@ManyToOne(targetEntity=Disciplina.class)
 	private Disciplina disciplina;
 	
+	@ManyToOne(targetEntity=Professor.class)
 	private Professor professor;
 	
+	@ManyToOne(targetEntity=Aluno.class)
 	private List<Aluno> alunos;
 	
-	private List<Notas> notas;
+	@OneToMany(mappedBy="turma")
+	private List<Nota> notas;
 
 	public long getId() {
 		return id;
@@ -96,11 +116,11 @@ public class Turma {
 		this.alunos = alunos;
 	}
 
-	public List<Notas> getNotas() {
+	public List<Nota> getNotas() {
 		return notas;
 	}
 
-	public void setNotas(List<Notas> notas) {
+	public void setNotas(List<Nota> notas) {
 		this.notas = notas;
 	}
 	

@@ -1,5 +1,6 @@
 package com.sisge.dados;
 
+import org.apache.taglibs.standard.lang.jstl.test.beans.Factory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -7,16 +8,17 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 	
 	
-	private static HibernateUtil instancia;
-	private static Session session;
-	
+	private static HibernateUtil unicaInstancia;
+	private Configuration conf;
+	private SessionFactory sessionFactory;
+	private Session session;
 	
 	private HibernateUtil(){
 		
-			Configuration conf = new Configuration();
+			conf = new Configuration();
 			conf.configure("hibernate.cfg.xml");
-			SessionFactory factory = conf.buildSessionFactory();
-			Session session = factory.openSession();
+			sessionFactory = conf.buildSessionFactory();
+			
 			
 		
 		
@@ -24,16 +26,32 @@ public class HibernateUtil {
 	}
 	
 	
-	public static Session  getSession(){
+	public static HibernateUtil  getInstancia(){
 		
-		if(session!=null){
+		if(unicaInstancia!=null){
+
+			return unicaInstancia;
+		}else{
+			
+			unicaInstancia = new HibernateUtil();
+			return unicaInstancia;
+		}
+		
+		
+	}
+	
+	public Session getSession(){
+		
+		if(this.session!=null && this.session.isOpen()){
 			
 			return session;
 		}else{
 			
-			instancia = new HibernateUtil();
+			session = sessionFactory.openSession();
 			return session;
+			
 		}
+		
 		
 		
 	}

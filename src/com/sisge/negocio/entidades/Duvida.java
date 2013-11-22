@@ -1,7 +1,17 @@
 package com.sisge.negocio.entidades;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="duvidas")
 public class Duvida {
 	
+	@Id
+	@GeneratedValue
 	private long id;
 	
 	private String pergunta;
@@ -10,8 +20,10 @@ public class Duvida {
 	
 	private boolean publica;
 	
+	@ManyToOne(targetEntity=Aluno.class)
 	private Aluno enviadaPor;
 	
+	@ManyToOne(targetEntity=Turma.class)
 	private Turma turma;
 
 	public long getId() {

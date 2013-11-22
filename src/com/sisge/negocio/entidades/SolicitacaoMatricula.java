@@ -2,8 +2,13 @@ package com.sisge.negocio.entidades;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 public class SolicitacaoMatricula {
 	
+	@Id
+	@GeneratedValue
 	private long id;
 	
 	private Date dtSolicitacao;
