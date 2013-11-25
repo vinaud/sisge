@@ -12,7 +12,7 @@ window.Roteador = Backbone.Router.extend({
 		
 		"login":"login",
 		"cadastrar":"cadastrar",
-		"usuario":"mostrarTelaUsuario"
+		"usuario":"mostrarTelaUsuario",
 		
 		
 		
@@ -39,8 +39,24 @@ window.Roteador = Backbone.Router.extend({
 	
 	
 	
+	
+	
 	cadastrar:function(){
 		
+		
+		
+	},
+	
+	
+	mostrarTelaUsuario:function(){
+		if(!window.viewTelaUsuario){
+			
+			window.viewTelaUsuario = new window.TelaUsuarioView();
+			$('#principal').html(viewTelaUsuario.render().el);
+			
+		}else{
+			$('#principal').html(viewTelaUsuario.render().el);
+		}
 		
 		
 	}

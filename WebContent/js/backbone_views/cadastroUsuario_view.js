@@ -59,7 +59,6 @@ window.CadastroUsuarioView =  Backbone.View.extend({
 		var nomeUsuario = $(this.el).find('#nomeUsuario').val();
 		var senha = $(this.el).find('#senha').val();
 		var confirmacaoSenha= $(this.el).find("#confirmacaoSenha").val();
-		alert(bairro);
 		
 		
 		var endereco = new window.Endereco({

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<section id="topo" style="padding-top: 15px">
+		<section>
+			<img id="imagem_perfil" src="arquivos/fotos_perfil/sem_foto.png" alt="perfil"/>
+			<section style="position:fixed; left: 180px;top:15px">
+					<p>Nome: Fulano da Silva</p>
+					<p>TIPO DE VÍNCULO: ALUNO</p>
+		
+				<table>
+					<tr>
+						<td><button class="btn btn-success" style="width: 200px;">Alterar dados pessoais</button></td>
+						<td><button class="btn btn-success" style="width: 200px;">Realizar matrícula</button></td>
+					</tr>
+					<tr>
+						<td><button id="btn_novo_vinculo" class="btn btn-success" style="width: 200px;">Novo vínculo</button></td>
+						<td><button class="btn btn-success" style="width: 200px;">Criar turma</button></td>
+					</tr>
+		
+				</table>
+			</section>
+		</section>
+<!-- 		separador -->
+		<section style="padding-bottom: 15px"></section>
+		<select id="vinculos">
+			<option value="-1">padrao</option>
+		</select>
+	</section>
+	<section id="turmas">
+		
+		Você não possui turmas
+		
+	</section>
+	
+	
+	
+	
+	
+	<!-- Modais -->
+	
+	<section id="modal_novo_vinculo"  class="modal hide fade">
+	
+		<section class="modal-header">
+			<h3>Novo Vínculo</h3>
+		
+		</section>
+		<section class="modal-body">
+			<p>Tipo de vínculo</p>
+			<table>
+				<tr>
+					<td>aluno</td>
+					<td><input id="modal_radio_aluno"class="modal_radio" type="radio" name="modal_radio_vinculo" checked="checked"/></td>
+				</tr>
+				<tr>
+					<td>professor</td>
+					<td><input id="modal_radio_professor" class="modal_radio" name="modal_radio_vinculo" type="radio"/></td>
+				</tr>
+			</table>
+			<section style="padding: 10px"></section>
+			<label>Nome do Vínculo</label><input id="modal_nome_vinculo" type="text"/>
+			
+		
+		</section>
+		<section class="modal-footer">
+			<button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+			<button id="salvar_vinculo" class="btn btn-success">Salvar</button>
+		
+		</section>
+	
+	</section>
+		
+
+	
+
+</body>
+</html>

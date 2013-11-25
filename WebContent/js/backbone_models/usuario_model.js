@@ -2,9 +2,8 @@ var Usuario = Backbone.Model.extend({
 	
 	urlRoot:"/SISGE/services/usuario/novo",
 	
-
-	
 	defaults:{
+		
 		
 		nome:null,
 		senha:null,
@@ -14,7 +13,7 @@ var Usuario = Backbone.Model.extend({
 		
 	},
 	
-	initialize:function(param){
+	initialize:function(){
 		
 		/*if(param){
 			

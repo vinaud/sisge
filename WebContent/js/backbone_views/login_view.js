@@ -55,12 +55,37 @@ window.LoginView = Backbone.View.extend({
 		
 		var nomeUsuario = $(this.el).find('#nomeUsuario').val();
 		var senha = $(this.el).find('#senha').val();
-		var query="http://localhost:8080/SISGE/services/usuario/login/usuario/"+
-							nomeUsuario+"/senha/"+senha
-		$.get(query,function(data){
+		
+		var query="http://localhost:8080/SISGE/services/login/usuario/"+
+							nomeUsuario+"/senha/"+senha;
+
+		var request = $.ajax({
+			type:"GET",
+			url : query,
+			async:false
 			
-			alert(data);
 		});
+		
+		request.done(function(data){
+			
+			window.usuario = new window.Usuario(JSON.parse(data));
+			roteador.navigate("usuario",{trigger:true});
+			
+			
+		});
+		
+		request.fail(function(erro,data){
+			
+			switch(erro.status){
+				case 401:
+					alert("Usuario e/ou senha não conferem");
+					break;
+				default:
+					alert("Falha de login: "+erro.status);
+			
+			}
+		});
+		
 
 		
 		

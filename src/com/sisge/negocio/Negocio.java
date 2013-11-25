@@ -3,9 +3,13 @@ package com.sisge.negocio;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 import com.sisge.negocio.entidades.Usuario;
+import com.sisge.negocio.entidades.Vinculo;
+import com.sisge.negocio.exceptions.LoginIncorretoException;
 import com.sisge.negocio.exceptions.ValidacaoException;
+import com.sun.jersey.api.core.HttpContext;
 
 public class Negocio implements InterfaceNegocio{
 
@@ -37,9 +41,17 @@ public class Negocio implements InterfaceNegocio{
 	}
 
 	@Override
-	public Usuario login(String usuario, String senha,HttpServlet context) {
+	public Usuario login(String usuario, String senha,HttpServletRequest context) throws LoginIncorretoException {
 		Login loginx = new Login();
 		return loginx.login(usuario,senha,context);
+	}
+
+	@Override
+	public void inserirVinculo(Vinculo vinculo) throws SQLException {
+		
+		GerenciaVinculos g = new GerenciaVinculos();
+		g.cadastrarVinculo(vinculo);
+		
 	}
 
 }

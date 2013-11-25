@@ -6,9 +6,28 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.password">sua senha</property>
-        <property name="hibernate.connection.url">url do BD</property>
+        <property name="hibernate.connection.password">senha</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sisge</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <mapping class=  "com.sisge.negocio.entidades.Disciplina"/>
+        <mapping class=  "com.sisge.negocio.entidades.Duvida"/>
+        <mapping class = "com.sisge.negocio.entidades.Usuario"/>
+        <mapping class = "com.sisge.negocio.entidades.Aluno"/>
+        <mapping class = "com.sisge.negocio.entidades.Professor"/>
+        <mapping class = "com.sisge.negocio.entidades.Vinculo"/>
+        <mapping class = "com.sisge.negocio.entidades.DadosPessoais"/>
+        <mapping class = "com.sisge.negocio.entidades.Endereco"/>
+        <mapping class = "com.sisge.negocio.entidades.Nota"/>
+        <mapping class = "com.sisge.negocio.entidades.Noticia"/>
+        <mapping class = "com.sisge.negocio.entidades.Turma"/>
+        <mapping class = "com.sisge.negocio.entidades.SolicitacaoMatricula"/>
+        <!--  <mapping class = "com.sisge.negocio.entidades.SituacaoTurma"/>-->
+        <!--  <mapping class = "com.sisge.negocio.entidades.StatusSolicitacao"/>-->
+
+        
+        
     </session-factory>
+    
 </hibernate-configuration>
