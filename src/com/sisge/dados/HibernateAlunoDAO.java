@@ -1,8 +1,17 @@
 package com.sisge.dados;
 
-import com.sisge.negocio.entidades.Aluno;
+import java.util.List;
 
-public class HibernateAlunoDAO extends AbstractHibernateDAO<Aluno>{
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
+import com.sisge.negocio.entidades.Aluno;
+import com.sisge.negocio.entidades.Professor;
+import com.sisge.negocio.entidades.TipoVinculo;
+import com.sisge.negocio.entidades.Vinculo;
+
+public class HibernateAlunoDAO extends AbstractHibernateDAO<Aluno> implements AlunoDAO{
 	
 	private static HibernateAlunoDAO unicaInstancia;
 	
@@ -26,6 +35,22 @@ public class HibernateAlunoDAO extends AbstractHibernateDAO<Aluno>{
 		}
 		
 	}
+
+
+	@Override
+	public List listar(long idUsuario) {
+		
+		Session session = HibernateUtil.getInstancia().getSession();
+		Criteria  c = session.createCriteria(Aluno.class);
+		
+		c.add(Restrictions.eq("usuario.id",idUsuario));
+		
+		
+		
+		return c.list();
+	}
+	
+	
 	
 
 }

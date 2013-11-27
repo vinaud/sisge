@@ -1,9 +1,11 @@
 package com.sisge.dados;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.sisge.negocio.entidades.Aluno;
 import com.sisge.negocio.entidades.Professor;
+import com.sisge.negocio.entidades.TipoVinculo;
 import com.sisge.negocio.entidades.Usuario;
 
 public class AcessoDados implements InterfaceAcessoDados {
@@ -55,6 +57,24 @@ public class AcessoDados implements InterfaceAcessoDados {
 		HibernateProfessorDAO dao = HibernateProfessorDAO.getInstancia();
 		dao.inserir(professor);
 		
+	}
+
+	@Override
+	public List listarVinculosAluno(long idUsuario) {
+		
+		AlunoDAO dao =HibernateAlunoDAO.getInstancia();
+		List lista = dao.listar(idUsuario);
+		
+		return lista;
+	}
+
+	@Override
+	public List listarVinculosProfessor(long idUsuario) {
+		
+		ProfessorDAO dao = HibernateProfessorDAO.getInstancia();
+		List lista = dao.listar(idUsuario);
+		
+		return lista;
 	}
 
 }

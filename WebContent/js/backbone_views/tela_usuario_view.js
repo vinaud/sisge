@@ -14,6 +14,28 @@ window.TelaUsuarioView =  Backbone.View.extend({
 		request.done(function(data){
 			that.template = data;
 		});
+		
+		request = $.ajax({
+			
+			
+			
+			
+		});
+		
+		request = $.ajax({
+			
+			url:"http://localhost:8080/SISGE/services/usuario/logado",
+			async:false,
+			method:"get"
+			
+		});
+		
+		request.done(function(data){
+			
+			window.usuario = new window.Usuario(JSON.parse(data));
+			
+		});
+		
 		this.render();
 		
 		
@@ -33,7 +55,9 @@ window.TelaUsuarioView =  Backbone.View.extend({
 	
 	render:function(){
 		
-		$(this.el).html(_.template(this.template));
+
+		
+		$(this.el).html(_.template(this.template,{usuario:/*JSON.stringify*/(window.usuario)}));
 		var turmasView = new window.TurmasAlunoView();
 		$(this.el).find("#turmas").html(turmasView.render().el);
 		

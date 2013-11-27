@@ -5,13 +5,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+<!-- 	<script type="text/template" id="template"> -->
 	<section id="topo" style="padding-top: 15px">
 		<section>
 			<img id="imagem_perfil" src="arquivos/fotos_perfil/sem_foto.png" alt="perfil"/>
+			<label>Aluno</label>
+			<input id="radio_aluno" type="radio" name="radio_tipo_vinculo"checked="checked" >
+			<label>Professor</label>
+			<input id="radio_professor" type="radio" name="radio_tipo_vinculo" >
 			<section style="position:fixed; left: 180px;top:15px">
-					<p>Nome: Fulano da Silva</p>
-					<p>TIPO DE VÍNCULO: ALUNO</p>
+					<p class="well"><b>Olá </b><%=usuario.get('dadosPessoais').nome%></p>
 		
 				<table>
 					<tr>
@@ -28,7 +31,9 @@
 		</section>
 <!-- 		separador -->
 		<section style="padding-bottom: 15px"></section>
+		<%_.each([1,2,3],function(){ %>
 		<select id="vinculos">
+		<% }); %>
 			<option value="-1">padrao</option>
 		</select>
 	</section>
@@ -76,7 +81,7 @@
 	</section>
 		
 
-	
+<!-- 	</script> -->
 
 </body>
 </html>
