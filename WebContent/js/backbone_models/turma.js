@@ -8,7 +8,7 @@ window.Turma = Backbone.Model.extend({
 		nome:null,
 		codigo:null,
 		capacidade:1,
-		vinculo:null
+		professor:null
 		
 	},
 	
@@ -26,7 +26,7 @@ window.Turma = Backbone.Model.extend({
 		camposInvalidos.push("nome");
 		}
 		
-		if(!attr.vinculo || attr.vinculo==null){
+		if(!attr.professor || attr.professor==null){
 			
 			camposInvalidos.push("vinculo");
 		}

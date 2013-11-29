@@ -49,7 +49,7 @@ window.CadastroTurmaView = Backbone.View.extend({
 			nome:nome,
 			codigo:codigo,
 			capacidade:capacidade,
-			vinculo:this.vinculo
+			professor:this.vinculo
 		});
 		
 		this.turma.on('invalid',function(model,erro){
