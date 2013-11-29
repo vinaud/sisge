@@ -27,3 +27,21 @@ window.Professor = Backbone.Model.extend({
 	
 	
 });
+
+
+window.AlunoCollection = Backbone.Collection.extend({
+	
+	
+	url:"services/vinculos/lista/tipo/ALUNO",
+	model:window.Aluno
+	
+});
+
+
+window.ProfessorCollection = Backbone.Collection.extend({
+	
+	
+	url:"services/vinculos/lista/tipo/PROFESSOR",
+	model:window.Professor
+	
+});

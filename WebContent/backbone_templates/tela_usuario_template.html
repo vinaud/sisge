@@ -5,7 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 	<script type="text/template" id="template"> -->
 	<section id="topo" style="padding-top: 15px">
 		<section>
 			<img id="imagem_perfil" src="arquivos/fotos_perfil/sem_foto.png" alt="perfil"/>
@@ -23,7 +22,7 @@
 					</tr>
 					<tr>
 						<td><button id="btn_novo_vinculo" class="btn btn-success" style="width: 200px;">Novo vínculo</button></td>
-						<td><button class="btn btn-success" style="width: 200px;">Criar turma</button></td>
+						<td><button id="btn_criar_turma" class="btn btn-success"  style="width: 200px;">Criar turma</button></td>
 					</tr>
 		
 				</table>
@@ -31,10 +30,8 @@
 		</section>
 <!-- 		separador -->
 		<section style="padding-bottom: 15px"></section>
-		<%_.each([1,2,3],function(){ %>
 		<select id="vinculos">
-		<% }); %>
-			<option value="-1">padrao</option>
+			<option></option>
 		</select>
 	</section>
 	<section id="turmas">
@@ -79,9 +76,26 @@
 		</section>
 	
 	</section>
+	
+	<section id="modal_criar_turma" class="modal hide fade">
+	
+		<section class="modal-header">
+			<h1>Cadastro de Turma</h1>
+		
+		
+		</section>
+		<section class="modal-body">
+			<section id="conteudo_modal_cadastro_turma"></section>
+		</section>
+		<section class="modal-footer">
+			<button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+		
+		</section>
+	
+	
+	</section>
 		
 
-<!-- 	</script> -->
 
 </body>
 </html>

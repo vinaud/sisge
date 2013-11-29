@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.sisge.negocio.entidades.TipoVinculo;
+import com.sisge.negocio.entidades.Turma;
 import com.sisge.negocio.entidades.Usuario;
 import com.sisge.negocio.entidades.Vinculo;
 import com.sisge.negocio.exceptions.LoginIncorretoException;
@@ -24,5 +25,8 @@ public interface InterfaceNegocio {
 	
 	
 	public List listarVinculosPorTipo(long idUsuario, TipoVinculo tipo);
+	
+	
+	public void cadastrarTurma(Turma turma) throws SQLException;
 
 }

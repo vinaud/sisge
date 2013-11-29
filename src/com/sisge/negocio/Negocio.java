@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import com.sisge.negocio.entidades.TipoVinculo;
+import com.sisge.negocio.entidades.Turma;
 import com.sisge.negocio.entidades.Usuario;
 import com.sisge.negocio.entidades.Vinculo;
 import com.sisge.negocio.exceptions.LoginIncorretoException;
@@ -62,6 +63,13 @@ public class Negocio implements InterfaceNegocio{
 		GerenciaVinculos g = new GerenciaVinculos();
 		List list = g.listarVinculosPorTipo(idUsuario, tipo);
 		return list;
+	}
+
+	@Override
+	public void cadastrarTurma(Turma turma) throws SQLException {
+		GerenciaTurmas g = new GerenciaTurmas();
+		g.cadastrarTurma(turma);
+		
 	}
 
 }

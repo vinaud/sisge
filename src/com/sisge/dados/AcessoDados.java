@@ -6,6 +6,7 @@ import java.util.List;
 import com.sisge.negocio.entidades.Aluno;
 import com.sisge.negocio.entidades.Professor;
 import com.sisge.negocio.entidades.TipoVinculo;
+import com.sisge.negocio.entidades.Turma;
 import com.sisge.negocio.entidades.Usuario;
 
 public class AcessoDados implements InterfaceAcessoDados {
@@ -75,6 +76,14 @@ public class AcessoDados implements InterfaceAcessoDados {
 		List lista = dao.listar(idUsuario);
 		
 		return lista;
+	}
+
+	@Override
+	public void inserirTurma(Turma turma) throws SQLException {
+		
+		HibernateTurmaDAO dao = HibernateTurmaDAO.getInstancia();
+		dao.inserir(turma);
+		
 	}
 
 }

@@ -52,10 +52,10 @@ window.Roteador = Backbone.Router.extend({
 		if(!window.viewTelaUsuario){
 			
 			window.viewTelaUsuario = new window.TelaUsuarioView();
-			$('#principal').html(viewTelaUsuario.render().el);
+			$('#principal').html(viewTelaUsuario.el);
 			
 		}else{
-			$('#principal').html(viewTelaUsuario.render().el);
+			$('#principal').html(viewTelaUsuario.el);
 		}
 		
 		

@@ -6,6 +6,7 @@ import java.util.List;
 import com.sisge.negocio.entidades.Aluno;
 import com.sisge.negocio.entidades.Professor;
 import com.sisge.negocio.entidades.TipoVinculo;
+import com.sisge.negocio.entidades.Turma;
 import com.sisge.negocio.entidades.Usuario;
 
 public interface InterfaceAcessoDados {
@@ -19,5 +20,7 @@ public interface InterfaceAcessoDados {
 	public List listarVinculosAluno(long idUsuario);
 	
 	public List listarVinculosProfessor(long idUsuario);
+	
+	public void inserirTurma(Turma turma) throws SQLException;
 
 }
