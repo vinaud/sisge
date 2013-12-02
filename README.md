@@ -1,11 +1,12 @@
 sisge
 =====
 
-[![Coverage Status](https://coveralls.io/repos/andreciencomp/sisge/badge.png)](https://coveralls.io/r/andreciencomp/sisge)
-!https://coveralls.io/repos/andreciencomp/sisge/badge.png(Coverage Status)!:https://coveralls.io/r/andreciencomp/sisge
-{<img src="https://coveralls.io/repos/andreciencomp/sisge/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/andreciencomp/sisge] 
-<a href='https://coveralls.io/r/andreciencomp/sisge'><img src='https://coveralls.io/repos/andreciencomp/sisge/badge.png' alt='Coverage Status' /></a> 
-.. image:: https://coveralls.io/repos/andreciencomp/sisge/badge.png :target: https://coveralls.io/r/andreciencomp/sisge 
+
+
+<a href='https://coveralls.io/repos/andreciencomp/sisge'><img src='https://coveralls.io/repos/andreciencomp/sisge/badge.png' alt='Coverage Status' /></a>
+
+[![Build Status](https://coveralls.io/repos/andreciencomp/sisge.png?branch=master)](https://coveralls.io/repos/andreciencomp/sisge)
+
 
 
 
