@@ -8,8 +8,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.sisge.negocio.entidades.Professor;
 
-public class HibernateProfessorDAO extends AbstractHibernateDAO<Professor> implements ProfessorDAO{
-	
+public class HibernateProfessorDAO extends AbstractHibernateDAO<Professor> implements ProfessorDAO{	
 	
 	private static HibernateProfessorDAO instancia;
 	
