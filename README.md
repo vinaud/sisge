@@ -11,8 +11,8 @@ sisge
 
 1 - INTRODUÇÃO
 
-	O Sistema de Gerenciamento escolar terá por finalidade auxiliar professores,alunos e administradores de 
-estabelecimento de ensino, gerenciar suas atividades escolares via sistema web.
+	O Sistema de Gerenciamento escolar terá por finalidade auxiliar professores,alunos e administradores 
+de estabelecimento de ensino, gerenciar suas atividades escolares via sistema web.
 	Qualquer usuário poderá fazer cadastro no sistema. 
 	O Sistema terá três tipos de usuário. Administrador, Professor e Aluno.
 
